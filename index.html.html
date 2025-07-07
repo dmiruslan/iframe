@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riga Strategic Offsite - Complete Event Plan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            margin-top: 25px;
+            font-size: 1.3em;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .card h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .budget-table th,
+        .budget-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .budget-table th {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .budget-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .agenda-day {
+            background: #ecf0f1;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .agenda-day h4 {
+            color: #c0392b;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        
+        .timeline {
+            margin: 10px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-time {
+            font-weight: bold;
+            color: #3498db;
+            min-width: 80px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            margin-left: 15px;
+        }
+        
+        .miro-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .miro-section h2 {
+            color: white;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+        }
+        
+        .mind-map {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .central-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .branch {
+            position: absolute;
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .branch-1 { top: 10%; left: 20%; background: #e74c3c; }
+        .branch-2 { top: 15%; right: 15%; background: #f39c12; }
+        .branch-3 { bottom: 20%; right: 10%; background: #27ae60; }
+        .branch-4 { bottom: 10%; left: 25%; background: #9b59b6; }
+        .branch-5 { top: 40%; left: 5%; background: #34495e; }
+        .branch-6 { top: 50%; right: 5%; background: #16a085; }
+        
+        .sub-branch {
+            position: absolute;
+            background: #95a5a6;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .participant-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .line {
+            position: absolute;
+            height: 2px;
+            background: #bdc3c7;
+            z-index: 1;
+        }
+        
+        .line-1 { top: 35%; left: 35%; width: 150px; transform: rotate(-30deg); }
+        .line-2 { top: 30%; right: 30%; width: 120px; transform: rotate(30deg); }
+        .line-3 { bottom: 35%; right: 25%; width: 140px; transform: rotate(-45deg); }
+        .line-4 { bottom: 30%; left: 40%; width: 130px; transform: rotate(45deg); }
+        .line-5 { top: 45%; left: 20%; width: 180px; transform: rotate(-15deg); }
+        .line-6 { top: 52%; right: 20%; width: 160px; transform: rotate(15deg); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 Riga Strategic Offsite</h1>
+            <p>3-Day C-Level Retreat | June 2025 | "Expanding International Business"</p>
+        </div>
+
+        <div class="section">
+            <h2>📋 Executive Summary</h2>
+            <div class="highlight">
+                <strong>Event Overview:</strong> A 3-day strategic offsite in Riga for 20 C-level executives focused on international business expansion. The event combines intensive strategic sessions with cultural experiences and team building activities, leveraging Riga's position as a gateway between Western and Eastern Europe.
+            </div>
+            
+            <div class="participants-grid">
+                <div class="participant-card">🇱🇻 Riga<br>5 Participants</div>
+                <div class="participant-card">🇨🇾 Cyprus<br>5 Participants</div>
+                <div class="participant-card">🇫🇷 Paris<br>6 Participants</div>
+                <div class="participant-card">🇪🇸 Madrid<br>1 Participant</div>
+                <div class="participant-card">🇬🇧 London<br>3 Participants</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏛️ Venue & Accommodation</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Primary Venue: Radisson Blu Latvija Conference Centre</h4>
+                    <p><strong>Location:</strong> Elizabetes iela 55, Riga<br>
+                    <strong>Capacity:</strong> 200 people (perfect for our 20)<br>
+                    <strong>Features:</strong> State-of-the-art AV equipment, flexible meeting spaces, city center location<br>
+                    <strong>Cost:</strong> €450/day for main conference room + €200/day for breakout rooms</p>
+                </div>
+                <div class="card">
+                    <h4>Accommodation: Grand Hotel Kempinski Riga</h4>
+                    <p><strong>Location:</strong> Aspazijas bulvāris 22, Old Town<br>
+                    <strong>Rooms:</strong> 20 executive rooms<br>
+                    <strong>Rate:</strong> €180/night per room<br>
+                    <strong>Amenities:</strong> Spa, fitness center, executive lounge, walking distance to Old Town</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📅 3-Day Program Agenda</h2>
+            
+            <div class="agenda-day">
+                <h4>Day 1: Arrival & Market Analysis</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">09:00</div>
+                        <div class="timeline-content"><strong>Airport Transfers & Hotel Check-in</strong><br>Private transport coordination</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:00</div>
+                        <div class="timeline-content"><strong>Welcome Lunch</strong><br>Restaurant Entresol - Traditional Latvian cuisine</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:00</div>
+                        <div class="timeline-content"><strong>Opening Session</strong><br>"Global Market Landscape 2025"</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">16:00</div>
+                        <div class="timeline-content"><strong>Regional Market Deep Dive</strong><br>EU, Eastern Europe, Nordic markets analysis</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:00</div>
+                        <div class="timeline-content"><strong>Riga Old Town Walking Tour</strong><br>UNESCO World Heritage site exploration</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">20:00</div>
+                        <div class="timeline-content"><strong>Welcome Dinner</strong><br>Folkklubs ALA Pagrabs - Authentic Latvian experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agenda-day">
+                <h4>Day 2: Strategy Development & Team Building</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:00</div>
+                        <div class="timeline-content"><strong>Breakfast</strong><br>Hotel executive lounge</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">09:00</div>
+                        <div class="timeline-content"><strong>Strategic Planning Session</strong><br>"International Expansion Framework"</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">11:00</div>
+                        <div class="timeline-content"><strong>Breakout Sessions</strong><br>Regional strategy groups (4 groups of 5)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:00</div>
+                        <div class="timeline-content"><strong>Lunch</strong><br>Restaurant 3 - Modern European cuisine</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:00</div>
+                        <div class="timeline-content"><strong>Riga Central Market Experience</strong><br>Cultural immersion + business networking lessons</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">17:00</div>
+                        <div class="timeline-content"><strong>Daugava River Boat Team Building</strong><br>Problem-solving challenges while cruising</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">20:00</div>
+                        <div class="timeline-content"><strong>Gala Dinner</strong><br>Dome Restaurant - Fine dining with city views</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agenda-day">
+                <h4>Day 3: Action Planning & Cultural Experience</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:00</div>
+                        <div class="timeline-content"><strong>Breakfast</strong><br>Hotel executive lounge</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">09:00</div>
+                        <div class="timeline-content"><strong>Implementation Workshop</strong><br>90-day action plans by region</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">11:00</div>
+                        <div class="timeline-content"><strong>Presentations</strong><br>Regional strategy presentations</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:30</div>
+                        <div class="timeline-content"><strong>Closing Lunch</strong><br>Sky Bar - Panoramic city views</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:30</div>
+                        <div class="timeline-content"><strong>Rundāle Palace Visit</strong><br>Baroque architecture & leadership lessons</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:00</div>
+                        <div class="timeline-content"><strong>Departure Transfers</strong><br>Airport & train station coordination</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Team Building & Cultural Activities</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Riga Central Market Challenge</h4>
+                    <p>Teams navigate Europe's largest market to complete business-related challenges, learning negotiation skills and cultural adaptation while engaging with local vendors and international traders.</p>
+                </div>
+                <div class="card">
+                    <h4>Daugava River Strategic Cruise</h4>
+                    <p>2-hour team building on a private yacht with problem-solving exercises related to international expansion, using Riga's maritime history as inspiration for global business strategies.</p>
+                </div>
+                <div class="card">
+                    <h4>Old Town Architectural Walk</h4>
+                    <p>Guided tour showcasing Riga's blend of medieval, Art Nouveau, and modern architecture as metaphors for business evolution and international adaptation.</p>
+                </div>
+                <div class="card">
+                    <h4>Rundāle Palace Leadership Workshop</h4>
+                    <p>Visit to Latvia's most magnificent palace with sessions on leadership styles across cultures, using historical examples from the Baltic region's international connections.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>✈️ Logistics Plan by Location</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Riga Participants (5 people)</h4>
+                    <p><strong>Transport:</strong> Local taxi vouchers<br>
+                    <strong>Accommodation:</strong> Optional hotel stay<br>
+                    <strong>Special Notes:</strong> Act as local guides for cultural activities</p>
+                </div>
+                <div class="card">
+                    <h4>Cyprus Participants (5 people)</h4>
+                    <p><strong>Flight:</strong> Larnaca → Riga (3h 15m)<br>
+                    <strong>Arrival:</strong> Day 1, 10:30 AM<br>
+                    <strong>Return:</strong> Day 3, 7:00 PM<br>
+                    <strong>Cost:</strong> €450/person average</p>
+                </div>
+                <div class="card">
+                    <h4>Paris Participants (6 people)</h4>
+                    <p><strong>Flight:</strong> CDG → Riga (2h 45m)<br>
+                    <strong>Arrival:</strong> Day 1, 11:15 AM<br>
+                    <strong>Return:</strong> Day 3, 6:30 PM<br>
+                    <strong>Cost:</strong> €320/person average</p>
+                </div>
+                <div class="card">
+                    <h4>Madrid Participant (1 person)</h4>
+                    <p><strong>Flight:</strong> MAD → Riga (3h 30m)<br>
+                    <strong>Arrival:</strong> Day 1, 10:45 AM<br>
+                    <strong>Return:</strong> Day 3, 7:15 PM<br>
+                    <strong>Cost:</strong> €380/person</p>
+                </div>
+                <div class="card">
+                    <h4>London Participants (3 people)</h4>
+                    <p><strong>Flight:</strong> LHR → Riga (2h 30m)<br>
+                    <strong>Arrival:</strong> Day 1, 11:00 AM<br>
+                    <strong>Return:</strong> Day 3, 6:45 PM<br>
+                    <strong>Cost:</strong> €280/person average</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💰 Budget Allocation</h2>
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Unit Cost</th>
+                        <th>Total Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3">Venue & Equipment</td>
+                        <td>Conference room (3 days)</td>
+                        <td>3</td>
+                        <td>€450</td>
+                        <td>€1,350</td>
+                    </tr>
+                    <tr>
+                        <td>Breakout rooms (3 days)</td>
+                        <td>3</td>
+                        <td>€200</td>
+                        <td>€600</td>
+                    </tr>
+                    <tr>
+                        <td>AV equipment & tech support</td>
+                        <td>1</td>
+                        <td>€400</td>
+                        <td>€400</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Accommodation</td>
+                        <td>Hotel rooms (2 nights)</td>
+                        <td>20</td>
+                        <td>€180</td>
+                        <td>€3,600</td>
+                    </tr>
+                    <tr>
+                        <td>Executive lounge access</td>
+                        <td>20</td>
+                        <td>€50</td>
+                        <td>€1,000</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Transportation</td>
+                        <td>Cyprus flights (5 people)</td>
+                        <td>5</td>
+                        <td>€450</td>
+                        <td>€2,250</td>
+                    </tr>
+                    <tr>
+                        <td>Paris flights (6 people)</td>
+                        <td>6</td>
+                        <td>€320</td>
+                        <td>€1,920</td>
+                    </tr>
+                    <tr>
+                        <td>Madrid flight (1 person)</td>
+                        <td>1</td>
+                        <td>€380</td>
+                        <td>€380</td>
+                    </tr>
+                    <tr>
+                        <td>London flights (3 people)</td>
+                        <td>3</td>
+                        <td>€280</td>
+                        <td>€840</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Local Transport</td>
+                        <td>Airport transfers</td>
+                        <td>1</td>
+                        <td>€600</td>
+                        <td>€600</td>
+                    </tr>
+                    <tr>
+                        <td>Local transport vouchers</td>
+                        <td>20</td>
+                        <td>€50</td>
+                        <td>€1,000</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Meals</td>
+                        <td>Welcome lunch</td>
+                        <td>20</td>
+                        <td>€45</td>
+                        <td>€900</td>
+                    </tr>
+                    <tr>
+                        <td>Gala dinner</td>
+                        <td>20</td>
+                        <td>€85</td>
+                        <td>€1,700</td>
+                    </tr>
+                    <tr>
+                        <td>Other meals</td>
+                        <td>1</td>
+                        <td>€800</td>
+                        <td>€800</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Activities</td>
+                        <td>Team building activities</td>
+                        <td>1</td>
+                        <td>€800</td>
+                        <td>€800</td>
+                    </tr>
+                    <tr>
+                        <td>Cultural experiences</td>
+                        <td>1</td>
+                        <td>€600</td>
+                        <td>€600</td>
+                    </tr>
+                    <tr>
+                        <td>Contingency</td>
+                        <td>Emergency fund (10%)</td>
+                        <td>1</td>
+                        <td>€1,384</td>
+                        <td>€1,384</td>
+                    </tr>
+                    <tr style="background: #3498db; color: white; font-weight: bold;">
+                        <td colspan="4">TOTAL BUDGET</td>
+                        <td>€15,624</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="highlight">
+                <strong>Budget Status:</strong> Current estimate: €15,624 (€624 over budget). Recommend negotiating group rates or reducing some transportation costs to meet the €15,000 target.
+            </div>
+        </div>
+
+        <div class="miro-section">
+            <h2>🧠 Interactive Miro Mind Map</h2>
+            <p>Visual representation of all offsite planning elements and their interconnections</p>
+            
+            <div class="mind-map">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+                <div class="line line-4"></div>
+                <div class="line line-5"></div>
+                <div class="line line-6"></div>
+                
+                <div class="central-node">
+                    RIGA STRATEGIC OFFSITE<br>
+                    <small>June 2025</small>
+                </div>
+                
+                <div class="branch branch-1">
+                    PARTICIPANTS<br>
+                    <small>20 C-Level</small>
+                </div>
+                
+                <div class="branch branch-2">
+                    VENUES<br>
+                    <small>Hotels & Conference</small>
+                </div>
+                
+                <div class="branch branch-3">
+                    ACTIVITIES<br>
+                    <small>Team Building</small>
+                </div>
+                
+                <div class="branch branch-4">
+                    BUDGET<br>
+                    <small>€15,000</small>
+                </div>
+                
+                <div class="branch branch-5">
+                    LOGISTICS<br>
+                    <small>Travel & Transport</small>
+                </div>
+                
+                <div class="branch branch-6">
+                    AGENDA<br>
+                    <small>3-Day Program</small>
+                </div>
+                
+                <div class="sub-branch" style="top: 5%; left: 25%;">🇱🇻 Riga: 5</div>
+                <div class="sub-branch" style="top: 8%; left: 35%;">🇨🇾 Cyprus: 5</div>
+                <div class="sub-branch" style="top: 18%; left: 8%;">🇫🇷 Paris: 6</div>
+                <div class="sub-branch" style="top: 25%; left: 15%;">🇪🇸 Madrid: 1</div>
+                <div class="sub-branch" style="top: 32%; left: 22%;">🇬🇧 London: 3</div>
+                
+                <div class="sub-branch" style="top: 8%; right: 20%;">Kempinski Hotel</div>
+                <div class="sub-branch" style="top: 20%; right: 8%;">Radisson Conference</div>
+                <div class="sub-branch" style="top: 28%; right: 25%;">Old Town Venues</div>
+                
+                <div class="sub-branch" style="bottom: 15%; right: 15%;">Market Challenge</div>
+                <div class="sub-branch" style="bottom: 25%; right: 25%;">River Cruise</div>
+                <div class="sub-branch" style="bottom: 35%; right: 5%;">Palace Visit</div>
+                
+                <div class="sub-branch" style="bottom: 5%; left: 30%;">Accommodation: €4,600</div>
+                <div class="sub-branch" style="bottom: 15%; left: 18%;">Transport: €5,990</div>
+                <div class="sub-branch" style="bottom: 25%; left: 8%;">Venue: €2,350</div>
+                
+                <div class="sub-branch" style="top: 42%; left: 1%;">✈️ Airport Transfers</div>
+                <div class="sub-branch" style="top: 52%; left: 1%;">🚗 Local Transport</div>
+                <div class="sub-branch" style="top: 62%; left: 1%;">📋 Coordination</div>
+                
+                <div class="sub-branch" style="top: 42%; right: 1%;">📅 Day 1: Analysis</div>
+                <div class="sub-branch" style="top: 52%; right: 1%;">📅 Day 2: Strategy</div>
+                <div class="sub-branch" style="top: 62%; right: 1%;">📅 Day 3: Action</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Key Success Factors</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Strategic Focus</h4>
+                    <p>Maintain clear focus on international expansion theme throughout all sessions and activities</p>
+                </div>
+                <div class="card">
+                    <h4>Cultural Integration</h4>
+                    <p>Leverage Riga's unique position as a bridge between Western and Eastern Europe</p>
+                </div>
+                <div class="card">
+                    <h4>Logistics Coordination</h4>
+                    <p>Seamless coordination of multiple arrival/departure schedules and cultural preferences</p>
